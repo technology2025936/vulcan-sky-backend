@@ -3,7 +3,11 @@ module.exports = [
     {
         name: 'strapi::cors',
         config: {
-            origin: ['http://localhost:8080', 'http://localhost:1337', 'https://vulcan-sky.vercel.app'],
+            origin: [
+                'https://vulcan-sky.vercel.app',
+                'http://localhost:8080',
+                'https://www.flyvulcan.co.za/'
+            ],
             methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
             headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
             credentials: true,
