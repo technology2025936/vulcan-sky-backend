@@ -6,7 +6,7 @@ module.exports = [
             origin: [
                 'https://vulcan-sky.vercel.app',
                 'http://localhost:8080',
-                'https://www.flyvulcan.co.za/'
+                'https://flyvulcan.co.za/'
             ],
             methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
             headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
