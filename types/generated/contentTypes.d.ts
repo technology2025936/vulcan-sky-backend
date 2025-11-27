@@ -637,6 +637,38 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiQuickLinksEnquiryQuickLinksEnquiry
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'quick_links_enquiries';
+  info: {
+    displayName: 'Quick Links Enquiry';
+    pluralName: 'quick-links-enquiries';
+    singularName: 'quick-links-enquiry';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    downloadType: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::quick-links-enquiry.quick-links-enquiry'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    phone: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1153,6 +1185,7 @@ declare module '@strapi/strapi' {
       'api::aviation-enquiry.aviation-enquiry': ApiAviationEnquiryAviationEnquiry;
       'api::category.category': ApiCategoryCategory;
       'api::global.global': ApiGlobalGlobal;
+      'api::quick-links-enquiry.quick-links-enquiry': ApiQuickLinksEnquiryQuickLinksEnquiry;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
